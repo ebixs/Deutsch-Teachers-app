@@ -1,0 +1,37 @@
+name: Build Windows installer
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Build installer (.exe)
+        run: npx electron-builder --win --publish never
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+
+      - name: List output
+        run: dir dist
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: AysudaLern-Windows
+          path: |
+            dist/AysudaLern_Setup.exe
+            dist/AysudaLern_Portable.exe
+            README.txt
+          if-no-files-found: error

@@ -1,0 +1,41 @@
+{
+  "name": "aysudalern",
+  "productName": "AysudaLern",
+  "version": "1.0.0",
+  "description": "AysudaLern — German Learning Studio",
+  "author": "Ebrahim",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.ebrahim.aysudalern",
+    "productName": "AysudaLern",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": ["main.js", "preload.js", "app-config.json", "renderer/**/*", "package.json"],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "AysudaLern",
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "AysudaLern_Setup.exe"
+    },
+    "portable": { "artifactName": "AysudaLern_Portable.exe" }
+  }
+}
