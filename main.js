@@ -8,12 +8,10 @@ const gotLock = app.requestSingleInstanceLock();
 if (!gotLock) { app.quit(); }
 
 // ---- fixed data location: %APPDATA%\Deutsch-Teachers-app ----
-const legacyDataDir = path.join(app.getPath('appData'), 'AysudaLern');
 const newDataDir = path.join(app.getPath('appData'), 'Deutsch-Teachers-app');
-try { if (!fs.existsSync(newDataDir) && fs.existsSync(legacyDataDir)) fs.cpSync(legacyDataDir, newDataDir, { recursive: true }); } catch (e) { console.error('legacy data migration failed', e); }
 app.setPath('userData', newDataDir);
 const DATA_DIR = app.getPath('userData');
-const DATA_FILE = path.join(DATA_DIR, 'aysudalern-data.json');
+const DATA_FILE = path.join(DATA_DIR, 'deutsch-teachers-data.json');
 const BACKUP_DIR = path.join(DATA_DIR, 'backups');
 const KEEP_AUTO_BACKUPS = 14;
 
@@ -101,7 +99,7 @@ ipcMain.handle('backup:restore', async () => {
     });
     if (r.canceled || !r.filePaths[0]) return { ok: false };
     const b = readJson(r.filePaths[0]);
-    if (!b || !(b.app === 'Deutsch-Teachers-app' || b.app === 'AysudaLern') || !b.data || typeof b.data !== 'object') {
+    if (!b || b.app !== 'Deutsch-Teachers-app' || !b.data || typeof b.data !== 'object') {
       return { ok: false, error: 'این فایل، Backup معتبر Deutsch-Teachers-app نیست.' };
     }
     const c = await dialog.showMessageBox(win, {
