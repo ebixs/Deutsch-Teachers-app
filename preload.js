@@ -4,7 +4,7 @@ const { contextBridge, ipcRenderer } = require('electron');
 // Synchronous snapshot so the page can use a localStorage-like API right at startup.
 const boot = ipcRenderer.sendSync('store:boot');
 
-contextBridge.exposeInMainWorld('aysudaDesktop', {
+contextBridge.exposeInMainWorld('deutschTeachersDesktop', {
   config: boot.config,
   dataDir: boot.dataDir,
   getAll: () => boot.data,
