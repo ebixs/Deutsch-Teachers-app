@@ -1,4 +1,4 @@
-name: Build Windows installer
+name: Build LTeachers App for Windows
 
 on:
   push:
@@ -29,9 +29,9 @@ jobs:
       - name: Upload installer
         uses: actions/upload-artifact@v4
         with:
-          name: AysudaLern-Windows
+          name: LTeachersApp-Windows
           path: |
-            dist/AysudaLern_Setup.exe
-            dist/AysudaLern_Portable.exe
+            dist/LTeachersApp_Setup.exe
+            dist/LTeachersApp_Portable.exe
             README.txt
           if-no-files-found: error
