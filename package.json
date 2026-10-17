@@ -1,8 +1,8 @@
 {
-  "name": "lteachers-app",
-  "productName": "LTeachers App",
+  "name": "deutsch-teachers-app",
+  "productName": "Deutsch-Teachers-app",
   "version": "1.0.0",
-  "description": "LTeachers App — Language Teacher Studio",
+  "description": "Deutsch-Teachers-app — Language Teacher Management",
   "author": "Ebrahim",
   "main": "main.js",
   "private": true,
@@ -15,8 +15,8 @@
     "electron-builder": "^25.1.8"
   },
   "build": {
-    "appId": "com.ebrahim.lteachersapp",
-    "productName": "LTeachers App",
+    "appId": "com.ebrahim.deutschteachersapp",
+    "productName": "Deutsch-Teachers-app",
     "directories": { "output": "dist", "buildResources": "build" },
     "files": ["main.js", "preload.js", "app-config.json", "renderer/**/*", "package.json"],
     "win": {
@@ -32,10 +32,10 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "LTeachers App",
+      "shortcutName": "Deutsch-Teachers-app",
       "deleteAppDataOnUninstall": false,
-      "artifactName": "LTeachersApp_Setup.exe"
+      "artifactName": "Deutsch-Teachers-app_Setup.exe"
     },
-    "portable": { "artifactName": "LTeachersApp_Portable.exe" }
+    "portable": { "artifactName": "Deutsch-Teachers-app_Portable.exe" }
   }
 }
