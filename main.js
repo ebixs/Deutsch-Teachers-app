@@ -131,7 +131,7 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1400, height: 880, minWidth: 1000, minHeight: 680,
     backgroundColor: '#f7f2f0',
-    title: 'Deutsch-Teachers-app — German Learning Studio',
+    title: 'Deutsch-Teachers-app — Language Teacher Management',
     icon: path.join(__dirname, 'build', 'icon.ico'),
     autoHideMenuBar: true,
     show: false,
