@@ -6,6 +6,8 @@
 
 **از مدیریت زبان‌آموزها و برنامه‌ریزی کلاس‌ها تا پیگیری پرداخت‌ها و پیشرفت آموزشی — همه در یک برنامه دسکتاپ.**
 
+**فارسی** · [English](README.en.md) · [Deutsch](README.de.md)
+
 [مشاهده مخزن](https://github.com/ebixs/Deutsch-Teachers-app) · [گزارش مشکل](https://github.com/ebixs/Deutsch-Teachers-app/issues) · [ساخت نسخه ویندوز](https://github.com/ebixs/Deutsch-Teachers-app/actions)
 
 </div>
